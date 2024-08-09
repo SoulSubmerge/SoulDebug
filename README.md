@@ -15,3 +15,8 @@ This is a debug tool that currently supports C/C++. It can perform basic memory,
 * [ ] 🧻 Supports VSCode extensions
 * [ ] 📈 Performance analysis (memory consumption, execution time)
 * [x] ❤️ In develoment ... ...
+
+## Supported platforms
+
+* [ ] 🖨️ Windows
+* [ ] 📺 Linux
