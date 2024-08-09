@@ -13,4 +13,5 @@ This is a debug tool that currently supports C/C++. It can perform basic memory,
 * [ ] 📝 Environment saving (stack and variable data)
 * [ ] 🖥️ Supports UI-based debugging
 * [ ] 🧻 Supports VSCode extensions
+* [ ] 📈 Performance analyysis (memory consumption, execution time)
 * [x] ❤️ In develoment ... ...
