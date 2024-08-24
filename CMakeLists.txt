@@ -1,4 +1,30 @@
 cmake_minimum_required(VERSION 3.21)
+message("\n = = =   🚗   = = = " )
+message("      ❤ ❤ ❤   🔚   ❤ ❤ ❤ \n" )
+message("   👉 ")
+
+# Set compiler. Note: This must be set before project.
+find_program(GCC_PATH NAMES "gcc")
+find_program(GPP_PATH NAMES "g++")
+find_program(CPP_PATH NAMES "c++")
+
+message("\n = = =   🚗 compiler path   = = = ")
+message("   👉 GCC Path = " ${GCC_PATH})
+message("   👉 G++ Path = " ${GPP_PATH})
+message("   👉 C++ Path = " ${CPP_PATH})
+message("      ❤ ❤ ❤   🔚   ❤ ❤ ❤ \n" )
+
+if(WIN32)
+    SET(CMAKE_C_COMPILER "${GCC_PATH}")
+    SET(CMAKE_CXX_COMPILER "${CPP_PATH}")
+    SET(CMAKE_ASM_COMPILER "${GCC_PATH}")
+else()
+    SET(CMAKE_C_COMPILER "${GCC_PATH}")
+    SET(CMAKE_CXX_COMPILER "${GPP_PATH}")
+    SET(CMAKE_ASM_COMPILER "${GCC_PATH}")
+endif()
+
+
 project(SOUL_DEBUG)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -13,10 +39,11 @@ option(ENABLE_STATIC "Executable programs enable static linking.(ON/OFF)" ON)
 option(ENABLE_X64 "64-bit target platform.(ON/OFF)" ON)
 
 # display setting params
-message(" = = =   Related setting information   = = =")
-message("ENABLE_DEBUG = ", ${ENABLE_DEBUG})
-message("ENABLE_STATIC = ", ${ENABLE_STATIC})
-message("ENABLE_X64 = ", ${ENABLE_X64})
+message("\n = = =   🚗 Related setting information   = = =")
+message("   👉 ENABLE_DEBUG = " ${ENABLE_DEBUG})
+message("   👉 ENABLE_STATIC = " ${ENABLE_STATIC})
+message("   👉 ENABLE_X64 = " ${ENABLE_X64})
+message("       ❤ ❤ ❤   🔚   ❤ ❤ ❤ \n" )
 
 # Set target platform to x64 by default.
 if(ENABLE_X64)
@@ -72,15 +99,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${RESULT_OUTPUT_DIR}) # set lib folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${RESULT_OUTPUT_DIR}) # set dll folder
 set(EXECUTABLE_OUTPUT_PATH ${RESULT_OUTPUT_DIR}) # set bin folder
 
-if(WIN32)
-    SET(CMAKE_C_COMPILER "gcc")
-    SET(CMAKE_CXX_COMPILER "c++")
-    SET(CMAKE_ASM_COMPILER "gcc")
-else()
-    SET(CMAKE_C_COMPILER "gcc")
-    SET(CMAKE_CXX_COMPILER "g++")
-    SET(CMAKE_ASM_COMPILER "gcc")
-endif()
 
 # add subproject
-add_subdirectory(SoulDebug)
+add_subdirectory(
+    SoulDebug
+    ExFileFormat
+    )
