@@ -5,6 +5,7 @@ project(SDBG)
 set(SDEBG_DEPENDENT_HEADER_LIST
     SoulDebug
     ExFileFormat
+    Unit
     )
 list(TRANSFORM SDEBG_DEPENDENT_HEADER_LIST PREPEND "${CMAKE_SOURCE_DIR}/")
 message("\n = = =   🚗 SoulDebug dependent header file   = = = " )
