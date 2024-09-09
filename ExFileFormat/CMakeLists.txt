@@ -3,6 +3,7 @@ project(EX_FILE_FORMAT)
 
 # Set the dir of the header file that you want to rely on.
 set(EXFILEFORMAT_DEPENDENT_HEADER_LIST
+    ExFileFormat
     Unit
     )
 list(TRANSFORM EXFILEFORMAT_DEPENDENT_HEADER_LIST PREPEND "${CMAKE_SOURCE_DIR}/")

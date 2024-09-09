@@ -74,9 +74,9 @@ else()
 endif()
 
 # Compile option for C/C++
-set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -std=${USE_STANDARD}")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Werror -Wall -std=${USE_STANDARD}")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -Werror -Wall -std=${USE_STANDARD}")
-set(CMAKE_C_FLAGS_DEBUG "-g -O0 -Wall")
+set(CMAKE_C_FLAGS_DEBUG "-g -O0 -Werror -Wall")
 set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG -Werror -Wall")
 
 
